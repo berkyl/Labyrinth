@@ -13,6 +13,14 @@ public class Person {
 	
 	private ArrayList<Point> m_WayOut;
 
+	public int getX() {
+		return m_X;
+	}
+	
+	public int getY() {
+		return m_Y;
+	}
+	
 	public Person(Maze maze, int x, int y) {
 		m_Maze = maze;
 		m_X = x;
@@ -39,6 +47,8 @@ public class Person {
 		if(m_X != 0 || m_Y != 0) {
 			if(m_Rotations == 0) {
 				if(!walk()) {
+					//turnLeft();
+					//walk(); 
 					followWall();
 				}
 			}
@@ -48,6 +58,8 @@ public class Person {
 			else {
 				followWall();
 			}
+			//System.out.println(m_Rotations);
+			
 			findWayOut();
 		}
 	}

@@ -207,7 +207,7 @@ public class Maze extends JPanel {
 		int x = x_cord;
 		int y = y_cord;
 		
-		if(person != null) {
+		if(person != null && person.getX() < width && person.getY() < height) {
             person.findWayOut();
 			ArrayList<Point> wayOut = person.getWayOut();
 			for(int i = 0; i < wayOut.size(); i++) {
